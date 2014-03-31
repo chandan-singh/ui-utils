@@ -458,6 +458,11 @@ angular.module('ui.scroll', []).directive('ngScrollViewport', [
 								if ((0 <= (_ref = locator - first - 1) && _ref < buffer.length)) {
 									inserted.push(insert(locator, item));
 									next++;
+								}else{
+									// unable to find any option to append into the scrollable list
+									// if above given condition fails then make default to append into the scrollable list
+									inserted.push(insert(buffer.length +1, item));
+									next++;
 								}
 							}
 							for (i = _k = 0, _len2 = buffer.length; _k < _len2; i = ++_k) {
